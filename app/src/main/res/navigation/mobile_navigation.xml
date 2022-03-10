@@ -22,4 +22,9 @@
         android:name="com.example.trpp.NavigationActivity.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_my"
+        android:name="com.example.trpp.NavigationActivity.ui.queue.QueueFragment"
+        android:label="@string/title_my"
+        tools:layout="@layout/fragment_queue" />
 </navigation>
