@@ -17,7 +17,7 @@
         android:title="@string/title_notifications" />
 
     <item
-        android:id="@+id/navigation_my"
+        android:id="@+id/navigation_queue"
         android:icon="@drawable/ic_queue"
         android:title="@string/title_my" />
 
