@@ -25,6 +25,6 @@
     <fragment
         android:id="@+id/navigation_queue"
         android:name="com.example.trpp.NavigationActivity.ui.queue.QueueFragment"
-        android:label="@string/title_my"
+        android:label="@string/title_queue"
         tools:layout="@layout/fragment_queue" />
 </navigation>

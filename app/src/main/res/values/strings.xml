@@ -8,6 +8,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="title_my">Queue</string>
+    <string name="title_queue">Очередь</string>
     <string name="hello">Hello</string>
+    <string name="to_queue">Встать в очередь</string>
+    <string name="out_queue">Выйти из очереди</string>
 </resources>

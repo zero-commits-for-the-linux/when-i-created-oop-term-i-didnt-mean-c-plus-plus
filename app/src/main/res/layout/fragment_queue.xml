@@ -5,10 +5,34 @@
     android:layout_height="match_parent"
     tools:context=".NavigationActivity.ui.queue.QueueFragment">
 
-    <TextView
+    <Button
+        android:id="@+id/to_queue"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello"
-        android:gravity="center"/>
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="210dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="80dp"
+        android:text="@string/to_queue" />
+
+    <Button
+        android:id="@+id/out_queue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="210dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="80dp"
+        android:text="@string/out_queue"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="560dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
 </RelativeLayout>
