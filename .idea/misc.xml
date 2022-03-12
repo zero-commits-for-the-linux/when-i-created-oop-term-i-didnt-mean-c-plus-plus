@@ -5,16 +5,22 @@
       <map>
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2625" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.3635" />
+        <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/ic_edit_50.xml" value="0.2935" />
+        <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/ic_edit_60.xml" value="0.316" />
+        <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/ic_home_24.xml" value="0.316" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2625" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2625" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2625" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/ic_queue_24.xml" value="0.316" />
+        <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/oval_button.xml" value="0.316" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/activity_navigation_main.xml" value="0.18541666666666667" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_dashboard.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_home.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_my.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_notifications.xml" value="0.3625" />
-        <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_queue.xml" value="0.21693840579710144" />
+        <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_profile.xml" value="0.2653985507246377" />
+        <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_queue.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/queue_item.xml" value="0.18541666666666667" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2625" />
         <entry key="..\:/rtu/4th_s/TRPP/itog_proect/when-i-created-oop-term-i-didnt-mean-c-plus-plus/app/src/main/res/layout/fragment_notifications.xml" value="0.22826086956521738" />
