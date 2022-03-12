@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trpp" >
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".NavigationActivity.NavigationMainActivity"
             android:exported="false"
             android:label="@string/title_activity_navigation_main" />

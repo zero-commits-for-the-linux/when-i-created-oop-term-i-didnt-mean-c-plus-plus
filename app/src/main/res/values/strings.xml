@@ -5,11 +5,13 @@
     <string name="enter_button">Вход</string>
     <string name="register_button">Регистрация</string>
     <string name="title_activity_navigation_main">NavigationMainActivity</string>
-    <string name="title_home">Home</string>
+    <string name="title_profile">Профиль</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_queue">Очередь</string>
     <string name="hello">Hello</string>
     <string name="to_queue">Встать в очередь</string>
     <string name="out_queue">Выйти из очереди</string>
+    <string name="profile_edit">Редактировать профиль</string>
+    <string name="profile_save">Сохранить изменения</string>
 </resources>
