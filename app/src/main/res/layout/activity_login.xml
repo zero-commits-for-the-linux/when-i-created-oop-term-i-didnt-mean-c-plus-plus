@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_blue_600"
+    android:background="@drawable/entries_background"
     tools:context=".EntriesActivities.LoginActivity">
 
     <EditText
@@ -11,10 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="60dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
         android:hint="@string/login_hint"
         android:inputType="textPersonName"
-        android:maxLength="20" />
+        android:maxLength="20"
+        android:drawableStart="@drawable/ic_login_24"
+        android:drawablePadding="20dp"/>
 
     <EditText
         android:id="@+id/password_enter"
@@ -25,7 +27,9 @@
         android:layout_marginTop="30dp"
         android:hint="@string/password_hint"
         android:inputType="textPassword"
-        android:maxLength="20"/>
+        android:maxLength="20"
+        android:drawableStart="@drawable/ic_password_24"
+        android:drawablePadding="20dp" />
     <Button
         android:id="@+id/enter_btn_enter"
         android:layout_width="match_parent"
