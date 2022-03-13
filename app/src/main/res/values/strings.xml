@@ -14,4 +14,5 @@
     <string name="out_queue">Выйти из очереди</string>
     <string name="profile_edit">Редактировать профиль</string>
     <string name="profile_save">Сохранить изменения</string>
+    <string name="image_edit">Изменить изображение</string>
 </resources>
