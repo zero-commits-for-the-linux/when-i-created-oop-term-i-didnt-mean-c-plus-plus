@@ -1,38 +1,80 @@
 package com.example.trpp.NavigationActivity;
 
 import android.os.Bundle;
-
+import android.view.Menu;
+import android.view.MenuItem;
+import com.example.trpp.NavigationActivity.ui.dashboard.DashboardFragment;
+import com.example.trpp.NavigationActivity.ui.notifications.NotificationsFragment;
+import com.example.trpp.NavigationActivity.ui.profile.ProfileFragment;
+import com.example.trpp.NavigationActivity.ui.queue.QueueFragment;
 import com.example.trpp.R;
-import com.example.trpp.databinding.ActivityNavigationMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 public class NavigationMainActivity extends AppCompatActivity {
 
-    private ActivityNavigationMainBinding binding;
+    final Fragment fragment1 = new ProfileFragment();
+    final Fragment fragment2 = new DashboardFragment();
+    final Fragment fragment3 = new NotificationsFragment();
+    final Fragment fragment4 = new QueueFragment();
+    final FragmentManager fm = getSupportFragmentManager();
+    Fragment active = fragment1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityNavigationMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_navigation_main);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-//        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-//                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications, R.id.navigation_queue)
-//                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_navigation_main);
-        //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.navView, navController);
+
+        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        fm.beginTransaction().add(R.id.container, fragment4, "4").hide(fragment4).commit();
+        fm.beginTransaction().add(R.id.container, fragment3, "3").hide(fragment3).commit();
+        fm.beginTransaction().add(R.id.container, fragment2, "2").hide(fragment2).commit();
+        fm.beginTransaction().add(R.id.container, fragment1, "1").commit();
+
+    }
+
+    private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_profile:
+                    fm.beginTransaction().hide(active).show(fragment1).commit();
+                    active = fragment1;
+                    return true;
+
+                case R.id.navigation_dashboard:
+                    fm.beginTransaction().hide(active).show(fragment2).commit();
+                    active = fragment2;
+                    return true;
+
+                case R.id.navigation_notifications:
+                    fm.beginTransaction().hide(active).show(fragment3).commit();
+                    active = fragment3;
+                    return true;
+
+                case R.id.navigation_queue:
+                    fm.beginTransaction().hide(active).show(fragment4).commit();
+                    active = fragment4;
+                    return true;
+            }
+            return false;
+        }
+    };
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.bottom_nav_menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
 }

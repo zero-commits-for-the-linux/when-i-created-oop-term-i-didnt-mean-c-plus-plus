@@ -40,6 +40,9 @@ public class ProfileFragment extends Fragment {
     private FragmentProfileBinding binding;
     CircleImageView profileImage;
 
+    public ProfileFragment() {
+    }
+
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentProfileBinding.inflate(inflater, container, false);
@@ -50,7 +53,6 @@ public class ProfileFragment extends Fragment {
         ImageButton edit_btn = binding.profileEdit;
         ImageButton save_btn = binding.profileSave;
         ImageButton image_btn = binding.imageEdit;
-        ImageView profileImage = binding.profileImage;
 
         edit_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +85,7 @@ public class ProfileFragment extends Fragment {
                 });
             }
         });
+
         return root;
     }
 
