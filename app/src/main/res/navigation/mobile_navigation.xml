@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_profile" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.trpp.NavigationActivity.ui.dashboard.DashboardFragment"
-        android:title="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_mail"
+        android:name="com.example.trpp.NavigationActivity.ui.mail.MailFragment"
+        android:title="@string/title_mail"
+        tools:layout="@layout/fragment_mail" />
 
     <fragment
         android:id="@+id/navigation_notifications"
