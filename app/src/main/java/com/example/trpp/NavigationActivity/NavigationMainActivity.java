@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.example.trpp.NavigationActivity.ui.mail.MailFragment;
-import com.example.trpp.NavigationActivity.ui.notifications.NotificationsFragment;
+import com.example.trpp.NavigationActivity.ui.votes.VotesFragment;
 import com.example.trpp.NavigationActivity.ui.profile.ProfileFragment;
 import com.example.trpp.NavigationActivity.ui.queue.QueueFragment;
 import com.example.trpp.R;
@@ -18,7 +18,7 @@ public class NavigationMainActivity extends AppCompatActivity {
 
     final Fragment fragment1 = new ProfileFragment();
     final Fragment fragment2 = new MailFragment();
-    final Fragment fragment3 = new NotificationsFragment();
+    final Fragment fragment3 = new VotesFragment();
     final Fragment fragment4 = new QueueFragment();
     final FragmentManager fm = getSupportFragmentManager();
     Fragment active = fragment1;
@@ -56,7 +56,7 @@ public class NavigationMainActivity extends AppCompatActivity {
                     active = fragment2;
                     return true;
 
-                case R.id.navigation_notifications:
+                case R.id.navigation_votes:
                     fm.beginTransaction().hide(active).show(fragment3).commit();
                     active = fragment3;
                     return true;
