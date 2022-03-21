@@ -7,7 +7,7 @@
     <string name="title_activity_navigation_main">NavigationMainActivity</string>
     <string name="title_profile">Профиль</string>
     <string name="title_mail">Почта</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_votes">Опросы</string>
     <string name="title_queue">Очередь</string>
     <string name="hello">Hello</string>
     <string name="to_queue">Встать в очередь</string>
@@ -15,4 +15,5 @@
     <string name="profile_edit">Редактировать профиль</string>
     <string name="profile_save">Сохранить изменения</string>
     <string name="image_edit">Изменить изображение</string>
+    <string name="profile_exit">Выход</string>
 </resources>
