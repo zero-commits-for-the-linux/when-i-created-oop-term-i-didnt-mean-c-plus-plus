@@ -1,9 +1,7 @@
 package com.example.trpp.NavigationActivity.ui.votes;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-
 import com.example.trpp.R;
 
 public class CreateVotes extends AppCompatActivity {
