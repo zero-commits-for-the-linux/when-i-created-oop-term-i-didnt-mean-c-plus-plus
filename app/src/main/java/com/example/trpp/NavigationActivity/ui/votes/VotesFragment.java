@@ -22,12 +22,7 @@ public class VotesFragment extends Fragment {
 
         ImageButton btn_add = binding.addNewVote;
 
-        btn_add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getContext(), CreateVotes.class));
-            }
-        });
+        btn_add.setOnClickListener(view -> startActivity(new Intent(getContext(), CreateVotes.class)));
 
         return root;
     }
