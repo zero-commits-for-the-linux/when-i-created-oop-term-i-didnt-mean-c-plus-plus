@@ -36,12 +36,9 @@ public class ProfileFragment extends Fragment {
         ImageButton image_btn = binding.imageEdit;
         ImageButton exit = binding.profileExit;
 
-        exit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getContext(), LoginActivity.class));
-                getActivity().onBackPressed();
-            }
+        exit.setOnClickListener(view -> {
+            startActivity(new Intent(getContext(), LoginActivity.class));
+            getActivity().onBackPressed();
         });
 
         edit_btn.setOnClickListener(view -> {
