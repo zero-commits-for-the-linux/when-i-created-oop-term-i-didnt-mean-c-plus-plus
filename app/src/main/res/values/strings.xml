@@ -16,4 +16,9 @@
     <string name="profile_save">Сохранить изменения</string>
     <string name="image_edit">Изменить изображение</string>
     <string name="profile_exit">Выход</string>
+    <string name="title_create_vote">Создание нового опроса</string>
+    <string name="title_lifetime">Время жизни опроса</string>
+    <string name="title_15_min">15 мин</string>
+    <string name="title_1_hour">1 час</string>
+    <string name="title_1_day">1 день</string>
 </resources>

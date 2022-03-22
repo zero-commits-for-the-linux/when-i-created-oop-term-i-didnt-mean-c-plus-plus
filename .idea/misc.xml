@@ -14,7 +14,6 @@
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2625" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/ic_queue_24.xml" value="0.316" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/oval_button.xml" value="0.316" />
-        <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/activity_create_votes.xml" value="0.18541666666666667" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/activity_login.xml" value="0.245018115942029" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/activity_navigation_main.xml" value="0.18541666666666667" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/activity_register.xml" value="0.245018115942029" />
@@ -25,11 +24,11 @@
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_notifications.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_profile.xml" value="0.2653985507246377" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_queue.xml" value="0.25" />
-        <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_votes.xml" value="0.2658514492753623" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/mobile_navigation.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/queue_item.xml" value="0.18541666666666667" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2625" />
+        <entry key="..\:/d/rtu/4th_s/TRPP/itog_proect/when-i-created-oop-term-i-didnt-mean-c-plus-plus/app/src/main/res/layout/activity_create_votes.xml" value="0.2" />
         <entry key="..\:/rtu/4th_s/TRPP/itog_proect/when-i-created-oop-term-i-didnt-mean-c-plus-plus/app/src/main/res/layout/fragment_notifications.xml" value="0.22826086956521738" />
         <entry key="..\:/rtu/4th_s/TRPP/itog_proect/when-i-created-oop-term-i-didnt-mean-c-plus-plus/app/src/main/res/layout/fragment_queue.xml" value="0.22826086956521738" />
         <entry key="..\:/rtu/4th_s/TRPP/itog_proect/when-i-created-oop-term-i-didnt-mean-c-plus-plus/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2421875" />
