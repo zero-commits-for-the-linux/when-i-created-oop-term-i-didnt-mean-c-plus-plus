@@ -11,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.trpp.NavigationActivity.NavigationMainActivity;
 import com.example.trpp.R;
 
+
+//Пустой комментарий
+
 public class LoginActivity extends AppCompatActivity {
     private EditText edit_text_login;
     private EditText edit_text_password;

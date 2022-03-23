@@ -19,6 +19,7 @@ public class QueueFragment extends Fragment {
 
     private FragmentQueueBinding binding;
 
+
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 

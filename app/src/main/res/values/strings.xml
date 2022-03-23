@@ -6,12 +6,20 @@
     <string name="register_button">Регистрация</string>
     <string name="title_activity_navigation_main">NavigationMainActivity</string>
     <string name="title_profile">Профиль</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_mail">Почта</string>
+    <string name="title_votes">Опросы</string>
     <string name="title_queue">Очередь</string>
     <string name="hello">Hello</string>
     <string name="to_queue">Встать в очередь</string>
     <string name="out_queue">Выйти из очереди</string>
     <string name="profile_edit">Редактировать профиль</string>
     <string name="profile_save">Сохранить изменения</string>
+    <string name="image_edit">Изменить изображение</string>
+    <string name="profile_exit">Выход</string>
+    <string name="title_create_vote">Создание нового опроса</string>
+    <string name="title_lifetime">Время жизни опроса</string>
+    <string name="title_15_min">15 мин</string>
+    <string name="title_1_hour">1 час</string>
+    <string name="title_1_day">1 день</string>
+    <string name="add_new_var">добавить вариант</string>
 </resources>
