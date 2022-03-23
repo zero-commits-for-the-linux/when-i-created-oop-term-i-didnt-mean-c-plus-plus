@@ -53,4 +53,21 @@
             android:layout_marginStart="20dp"/>
     </RadioGroup>
 
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/radio_lifetime"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/add_new_var"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/list_view"
+        android:text="@string/add_new_var"/>
+
+
+
 </RelativeLayout>

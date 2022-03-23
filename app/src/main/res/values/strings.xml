@@ -21,4 +21,5 @@
     <string name="title_15_min">15 мин</string>
     <string name="title_1_hour">1 час</string>
     <string name="title_1_day">1 день</string>
+    <string name="add_new_var">добавить вариант</string>
 </resources>
