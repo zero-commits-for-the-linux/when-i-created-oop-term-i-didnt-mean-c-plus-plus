@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <EditText
-        android:id="@+id/edit_variant"
-        android:layout_width="350dp"
+        android:id="@+id/list_item_editText"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"/>
+        android:layout_centerHorizontal="true"
+        android:hint="Вариант"/>
 
     <ImageButton
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_toEndOf="@+id/edit_variant"
+        android:layout_toEndOf="@+id/list_item_editText"
         android:background="@android:color/transparent"
         android:src="@drawable/ic_delete_var_24"/>
 </RelativeLayout>
