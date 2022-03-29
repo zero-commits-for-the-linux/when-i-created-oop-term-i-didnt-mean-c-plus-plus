@@ -6,24 +6,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-
+import android.widget.ImageButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.trpp.R;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
+public class EditTextAdapter extends RecyclerView.Adapter<EditTextAdapter.ViewHolder> {
 
-    private String[] mDataset;
+    private List<String> mDataset;
 
-    public CustomAdapter(String[] myDataset) {
+    public EditTextAdapter(List<String> myDataset) {
         mDataset = myDataset;
     }
 
     @Override
-    public CustomAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+    public EditTextAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_adding_vars, parent, false);
         // pass MyCustomEditTextListener to viewholder in onCreateViewHolder
         // so that we don't have to do this expensive allocation in onBindViewHolder
         ViewHolder vh = new ViewHolder(v, new MyCustomEditTextListener());
@@ -36,12 +36,22 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         // update MyCustomEditTextListener every time we bind a new item
         // so that it knows what item in mDataset to update
         holder.myCustomEditTextListener.updatePosition(holder.getAdapterPosition());
-        holder.mEditText.setText(mDataset[holder.getAdapterPosition()]);
+        holder.mEditText.setText(mDataset.get(holder.getAdapterPosition()));
+
+        holder.mImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int newPosition = holder.getAdapterPosition();
+                CreateVotes.mDataSet.remove(newPosition);
+                notifyItemRemoved(newPosition);
+                notifyItemRangeChanged(newPosition, CreateVotes.mDataSet.size());
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return mDataset.length;
+        return mDataset.size();
     }
 
 
@@ -49,13 +59,16 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         // each data item is just a string in this case
         public EditText mEditText;
         public MyCustomEditTextListener myCustomEditTextListener;
+        public ImageButton mImageButton;
 
         public ViewHolder(View v, MyCustomEditTextListener myCustomEditTextListener) {
             super(v);
 
-            this.mEditText = (EditText) v.findViewById(R.id.list_item_editText);
+            this.mEditText =  v.findViewById(R.id.list_item_editText);
             this.myCustomEditTextListener = myCustomEditTextListener;
             this.mEditText.addTextChangedListener(myCustomEditTextListener);
+
+            this.mImageButton = v.findViewById(R.id.list_item_imageBtn);
         }
     }
 
@@ -76,7 +89,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-            mDataset[position] = charSequence.toString();
+            mDataset.set(position, charSequence.toString());
         }
 
         @Override

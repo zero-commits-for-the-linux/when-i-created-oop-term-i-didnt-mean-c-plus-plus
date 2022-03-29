@@ -5,14 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.trpp.NavigationActivity.NavigationMainActivity;
 import com.example.trpp.R;
-
-
-//Пустой комментарий
 
 public class LoginActivity extends AppCompatActivity {
     private EditText edit_text_login;
@@ -24,6 +21,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        //Коннект к бд
+        //Коннект к таблице с юзерами
 
         edit_text_login = findViewById(R.id.login_enter);
         edit_text_password = findViewById(R.id.password_enter);
@@ -40,8 +40,11 @@ public class LoginActivity extends AppCompatActivity {
         enter_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                if (edit_text_login существует И edit_text_password для этого edit_text_login в таблице равен текущему введенному) то :
                 startActivity(new Intent(LoginActivity.this, NavigationMainActivity.class));
                 finish();
+//                else
+//                Toast.makeText(LoginActivity.this, "incorrect data", Toast.LENGTH_SHORT).show();
             }
         });
     }

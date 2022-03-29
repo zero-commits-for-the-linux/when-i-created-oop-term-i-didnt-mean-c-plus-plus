@@ -22,6 +22,9 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        //Коннект к бд
+        //Коннект к таблице с юзерами
+
         edit_text_login = findViewById(R.id.login_register);
         edit_text_password = findViewById(R.id.password_register);
         register_button = findViewById(R.id.register_btn_register);
@@ -29,6 +32,9 @@ public class RegisterActivity extends AppCompatActivity {
         register_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //отправка значений в БД - могут возникнуть трудности с передачей значений через EditText.getText().toString()
+                //из-за того что ты должен будешь пушить в кавычках - будут трудности с формированием строки - обратишься
+
                 //hide keyboard
                 InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(register_button.getWindowToken(), InputMethodManager.RESULT_UNCHANGED_SHOWN);

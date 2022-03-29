@@ -5,6 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".NavigationActivity.ui.votes.VotesFragment">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_for_votes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <ImageButton
         android:id="@+id/add_new_vote"
         android:background="@drawable/oval_button"
