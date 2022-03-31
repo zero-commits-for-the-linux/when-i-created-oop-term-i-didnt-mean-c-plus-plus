@@ -5,11 +5,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.trpp.NavigationActivity.NavigationMainActivity;
 import com.example.trpp.R;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText edit_text_login;
@@ -40,11 +45,8 @@ public class LoginActivity extends AppCompatActivity {
         enter_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                if (edit_text_login существует И edit_text_password для этого edit_text_login в таблице равен текущему введенному) то :
                 startActivity(new Intent(LoginActivity.this, NavigationMainActivity.class));
                 finish();
-//                else
-//                Toast.makeText(LoginActivity.this, "incorrect data", Toast.LENGTH_SHORT).show();
             }
         });
     }
