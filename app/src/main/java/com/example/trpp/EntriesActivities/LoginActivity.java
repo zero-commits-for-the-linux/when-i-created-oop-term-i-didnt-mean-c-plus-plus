@@ -7,12 +7,14 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.trpp.NavigationActivity.NavigationMainActivity;
 import com.example.trpp.R;
 
-
-//Пустой комментарий
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText edit_text_login;
@@ -24,6 +26,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        //Коннект к бд
+        //Коннект к таблице с юзерами
 
         edit_text_login = findViewById(R.id.login_enter);
         edit_text_password = findViewById(R.id.password_enter);
