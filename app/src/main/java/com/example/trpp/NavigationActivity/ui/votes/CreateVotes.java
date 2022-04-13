@@ -51,8 +51,9 @@ public class CreateVotes extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 btn_add_var.setEnabled(true);
-                mDataSet.add("");
-                EditTextAdapter adapter = new EditTextAdapter(mDataSet);
+//                mDataSet.add("");
+//                EditTextAdapter adapter = new EditTextAdapter(mDataSet);
+                adapter.add("");
                 mRecyclerView.setAdapter(adapter);
             }
         });
