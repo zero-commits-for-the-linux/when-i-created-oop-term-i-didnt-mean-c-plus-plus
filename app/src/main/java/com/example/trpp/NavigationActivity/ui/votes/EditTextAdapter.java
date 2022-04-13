@@ -21,6 +21,10 @@ public class EditTextAdapter extends RecyclerView.Adapter<EditTextAdapter.ViewHo
         mDataset = myDataset;
     }
 
+    public void add(String str) {
+        mDataset.add(str);
+    }
+
     @Override
     public EditTextAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_adding_vars, parent, false);
@@ -35,16 +39,18 @@ public class EditTextAdapter extends RecyclerView.Adapter<EditTextAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // update MyCustomEditTextListener every time we bind a new item
         // so that it knows what item in mDataset to update
-        holder.myCustomEditTextListener.updatePosition(holder.getAdapterPosition());
-        holder.mEditText.setText(mDataset.get(holder.getAdapterPosition()));
+        holder.myCustomEditTextListener.updatePosition(holder.getBindingAdapterPosition());
+//        holder.mEditText.setText(mDataset.get(holder.getAdapterPosition()));
 
         holder.mImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int newPosition = holder.getAdapterPosition();
+                holder.mImageButton.setEnabled(false);
+                int newPosition = holder.getBindingAdapterPosition();
                 CreateVotes.mDataSet.remove(newPosition);
                 notifyItemRemoved(newPosition);
                 notifyItemRangeChanged(newPosition, CreateVotes.mDataSet.size());
+                holder.myCustomEditTextListener.updatePosition(holder.getAdapterPosition());
             }
         });
     }

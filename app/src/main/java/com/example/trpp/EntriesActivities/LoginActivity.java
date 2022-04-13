@@ -10,12 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.trpp.NavigationActivity.NavigationMainActivity;
 import com.example.trpp.R;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
 public class LoginActivity extends AppCompatActivity {
     private EditText edit_text_login;
     private EditText edit_text_password;
