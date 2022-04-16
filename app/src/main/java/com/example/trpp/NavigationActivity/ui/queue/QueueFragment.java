@@ -34,6 +34,7 @@ public class QueueFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getContext(), "This is to queue btn", Toast.LENGTH_LONG).show();
+
             }
         });
 

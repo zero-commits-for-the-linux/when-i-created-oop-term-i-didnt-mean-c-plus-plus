@@ -21,8 +21,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //Коннект к бд
-        //Коннект к таблице с юзерами
 
         edit_text_login = findViewById(R.id.login_enter);
         edit_text_password = findViewById(R.id.password_enter);
