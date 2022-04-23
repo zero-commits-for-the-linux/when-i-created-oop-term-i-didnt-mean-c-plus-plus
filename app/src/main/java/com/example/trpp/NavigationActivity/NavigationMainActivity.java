@@ -9,6 +9,8 @@ import com.example.trpp.NavigationActivity.ui.profile.ProfileFragment;
 import com.example.trpp.NavigationActivity.ui.queue.QueueFragment;
 import com.example.trpp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -31,7 +33,7 @@ public class NavigationMainActivity extends AppCompatActivity {
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navView.setOnItemSelectedListener(mOnNavigationItemSelectedListener);
 
         fm.beginTransaction().add(R.id.container, fragment4, "4").hide(fragment4).commit();
         fm.beginTransaction().add(R.id.container, fragment3, "3").hide(fragment3).commit();
@@ -39,8 +41,8 @@ public class NavigationMainActivity extends AppCompatActivity {
         fm.beginTransaction().add(R.id.container, fragment1, "1").commit();
     }
 
-    private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+    private final NavigationBarView.OnItemSelectedListener mOnNavigationItemSelectedListener
+            = new NavigationBarView.OnItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {

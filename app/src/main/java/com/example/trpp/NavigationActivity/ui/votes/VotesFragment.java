@@ -22,6 +22,8 @@ import java.util.List;
 public class VotesFragment extends Fragment {
 
     private FragmentVotesBinding binding;
+    public VotesFragment() {
+    }
     static List<String> VOTES = new ArrayList<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

@@ -9,7 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.trpp.EntriesActivities.LoginActivity;
@@ -23,6 +27,21 @@ public class ProfileFragment extends Fragment {
 
     public ProfileFragment() {
     }
+
+    ActivityResultLauncher<Intent> startActivityForResult = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == AppCompatActivity.RESULT_OK) {
+                    profileImage = binding.profileImage;
+                    Intent data = result.getData();
+                    Uri selectedImage = null;
+                    if (data != null) {
+                        selectedImage = data.getData();
+                    }
+                    profileImage.setImageURI(selectedImage);
+                }
+            }
+    );
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -51,9 +70,13 @@ public class ProfileFragment extends Fragment {
             image_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
-                    photoPickerIntent.setType("image/*");
-                    startActivityForResult(photoPickerIntent, 1);
+                    Intent intent = new Intent(Intent.ACTION_PICK);
+                    intent.setType("image/*");
+                    startActivityForResult.launch(intent);
+
+//                    Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+//                    photoPickerIntent.setType("image/*");
+//                    startActivityForResult(photoPickerIntent, 1);
                 }
             });
 

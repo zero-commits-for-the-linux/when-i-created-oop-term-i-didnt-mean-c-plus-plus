@@ -21,6 +21,8 @@ public class MailFragment extends Fragment {
 
     private FragmentMailBinding binding;
 
+    public MailFragment() {
+    }
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentMailBinding.inflate(inflater, container, false);
