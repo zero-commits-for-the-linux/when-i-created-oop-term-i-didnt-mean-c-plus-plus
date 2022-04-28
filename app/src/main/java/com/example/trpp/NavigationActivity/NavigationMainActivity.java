@@ -1,8 +1,15 @@
 package com.example.trpp.NavigationActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+
 import com.example.trpp.NavigationActivity.ui.mail.MailFragment;
 import com.example.trpp.NavigationActivity.ui.votes.VotesFragment;
 import com.example.trpp.NavigationActivity.ui.profile.ProfileFragment;
@@ -25,13 +32,19 @@ public class NavigationMainActivity extends AppCompatActivity {
     final FragmentManager fm = getSupportFragmentManager();
     Fragment active = fragment1;
 
+    public static BottomNavigationView navView;
+
+    public BottomNavigationView getNavView() {
+        return this.navView;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_navigation_main);
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
+        navView = findViewById(R.id.nav_view);
 
         navView.setOnItemSelectedListener(mOnNavigationItemSelectedListener);
 
@@ -41,9 +54,9 @@ public class NavigationMainActivity extends AppCompatActivity {
         fm.beginTransaction().add(R.id.container, fragment1, "1").commit();
     }
 
-    private final NavigationBarView.OnItemSelectedListener mOnNavigationItemSelectedListener
-            = new NavigationBarView.OnItemSelectedListener() {
+    private final NavigationBarView.OnItemSelectedListener mOnNavigationItemSelectedListener = new NavigationBarView.OnItemSelectedListener() {
 
+        @SuppressLint("NonConstantResourceId")
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
@@ -73,9 +86,25 @@ public class NavigationMainActivity extends AppCompatActivity {
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
         getMenuInflater().inflate(R.menu.bottom_nav_menu, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    //метод скрытия клавиатры
+    @Override
+    public boolean dispatchTouchEvent(@NonNull MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            View v = getCurrentFocus();
+            if (v instanceof EditText) {
+                v.clearFocus();
+                InputMethodManager imm = (InputMethodManager) getBaseContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
+            }
+        }
+
+        return super.dispatchTouchEvent(event);
     }
 
 }

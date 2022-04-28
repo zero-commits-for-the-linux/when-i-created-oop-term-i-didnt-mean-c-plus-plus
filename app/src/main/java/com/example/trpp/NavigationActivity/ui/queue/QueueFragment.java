@@ -30,7 +30,6 @@ public class QueueFragment extends Fragment {
 
         Button to_queue = binding.toQueue;
         Button out_queue = binding.outQueue;
-        EditText input = binding.testFIO;
 
         to_queue.setOnClickListener(new View.OnClickListener() {
             @Override

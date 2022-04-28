@@ -25,22 +25,14 @@
         android:layout_marginBottom="80dp"
         android:text="@string/out_queue"/>
 
-    <EditText
-        android:id="@+id/test_FIO"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/out_queue"
-        android:layout_marginBottom="20dp"
-        android:hint="Образно я залогинился как" />
-
-    <ListView
-        android:id="@+id/list_view"
-        android:layout_width="match_parent"
-        android:layout_height="520dp"
+        android:layout_height="590dp"
         android:layout_alignParentTop="true"
         android:divider="@android:color/transparent"
         android:dividerHeight="10dp">
 
-    </ListView>
+    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

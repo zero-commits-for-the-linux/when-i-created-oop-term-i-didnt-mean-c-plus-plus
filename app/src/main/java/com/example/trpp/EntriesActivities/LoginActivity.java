@@ -47,7 +47,10 @@ public class LoginActivity extends AppCompatActivity {
                 if (!result.equals("null\n")) {
                     JSONObject jsonObject = new JSONObject(result);
                     if (jsonObject.get("login").equals(edit_text_login.getText().toString()) && edit_text_password.getText().toString().equals(jsonObject.get("password"))) {
-                        startActivity(new Intent(LoginActivity.this, NavigationMainActivity.class));
+                        Intent successfulLoginIntent = new Intent(LoginActivity.this, NavigationMainActivity.class);
+                        successfulLoginIntent.putExtra("fio", jsonObject.getString("fullname"));
+                        successfulLoginIntent.putExtra("login", jsonObject.getString("login"));
+                        startActivity(new Intent(successfulLoginIntent));
                         finish();
                     } else {
                         Toast.makeText(LoginActivity.this, "Неверные данные", Toast.LENGTH_SHORT).show();
@@ -55,7 +58,6 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(LoginActivity.this, "Неверные данные", Toast.LENGTH_SHORT).show();
                 }
-
                 con.disconnect();
             } catch (Exception e) {
                 System.out.println(e);

@@ -17,13 +17,15 @@
 
         <activity
             android:name=".NavigationActivity.ui.votes.CreateVotes"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="locked" />
+
         <activity
             android:name=".NavigationActivity.NavigationMainActivity"
-            android:exported="false"
-            android:label="@string/title_activity_navigation_main"
-            android:launchMode="singleTop"
-            android:screenOrientation="locked" />
+            android:exported="true"
+            android:screenOrientation="locked"
+            android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".EntriesActivities.LoginActivity"
             android:exported="true"
@@ -34,7 +36,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EntriesActivities.RegisterActivity" />
+
+        <activity
+            android:name=".EntriesActivities.RegisterActivity"
+            android:exported="true"
+            android:screenOrientation="locked" />
+
     </application>
 
 </manifest>

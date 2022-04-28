@@ -11,6 +11,7 @@
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/ic_edit_30.xml" value="0.316" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/ic_edit_50.xml" value="0.2935" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/ic_edit_60.xml" value="0.316" />
+        <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/ic_fio_24.xml" value="0.2865" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/ic_home_24.xml" value="0.316" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2625" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/drawable/ic_image_edit_100.xml" value="0.316" />
@@ -29,6 +30,7 @@
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_dashboard.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_home.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_item_detail.xml" value="0.3625" />
+        <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_mail.xml" value="0.2767210144927536" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_my.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_notifications.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/trpp/app/src/main/res/layout/fragment_profile.xml" value="0.2653985507246377" />

@@ -28,20 +28,30 @@ public class CreateVotes extends AppCompatActivity {
     static int COUNTER = 3;
     static List<String> mDataSet = new ArrayList<>();
 
+    private static RecyclerView mRecyclerView;
 
+    ImageButton btn_remove_var;
+    Button btn_add_var;
+    ImageButton btn_ready;
+
+    public static void updateAdapter(List<String> mDataSet) {
+        mRecyclerView.setAdapter(new EditTextAdapter(mDataSet));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_votes);
 
-        Button btn_add_var = findViewById(R.id.add_new_var);
-        RecyclerView mRecyclerView = findViewById(R.id.recycle);
-        ImageButton btn_ready = findViewById(R.id.ready);
+        btn_remove_var = findViewById(R.id.list_item_imageBtn);
+        btn_add_var = findViewById(R.id.add_new_var);
+        mRecyclerView = findViewById(R.id.recycle);
+        btn_ready = findViewById(R.id.ready);
 
         mDataSet.add("");
         mDataSet.add("");
         mDataSet.add("");
+
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         EditTextAdapter adapter = new EditTextAdapter(mDataSet);
@@ -51,10 +61,8 @@ public class CreateVotes extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 btn_add_var.setEnabled(true);
-//                mDataSet.add("");
-//                EditTextAdapter adapter = new EditTextAdapter(mDataSet);
-                adapter.add("");
-                mRecyclerView.setAdapter(adapter);
+                mDataSet.add("");
+                updateAdapter(mDataSet);
             }
         });
 
@@ -91,5 +99,11 @@ public class CreateVotes extends AppCompatActivity {
             }
         }
         return super.dispatchTouchEvent(event);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mDataSet.removeAll(mDataSet);
     }
 }
