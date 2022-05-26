@@ -50,6 +50,8 @@ public class LoginActivity extends AppCompatActivity {
                         Intent successfulLoginIntent = new Intent(LoginActivity.this, NavigationMainActivity.class);
                         successfulLoginIntent.putExtra("fio", jsonObject.getString("fullname"));
                         successfulLoginIntent.putExtra("login", jsonObject.getString("login"));
+                        successfulLoginIntent.putExtra("password", jsonObject.getString("password"));
+                        successfulLoginIntent.putExtra("id", jsonObject.getString("id"));
                         startActivity(new Intent(successfulLoginIntent));
                         finish();
                     } else {

@@ -16,11 +16,4 @@
         android:icon="@drawable/ic_mail_24"
         android:title="@string/title_mail" />
 
-    <item
-        android:id="@+id/navigation_votes"
-        android:icon="@drawable/ic_votes_24"
-        android:title="@string/title_votes" />
-
-
-
 </menu>

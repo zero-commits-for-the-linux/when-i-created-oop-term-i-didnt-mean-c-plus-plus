@@ -1,17 +1,13 @@
 package com.example.trpp.NavigationActivity.ui.profile;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
@@ -48,33 +44,28 @@ public class ProfileFragment extends Fragment {
     CircleImageView profileImage;
     EditText edit_text_fio;
     EditText edit_text_login;
+    EditText edit_text_password;
+
+    private String response;
 
 
     public ProfileFragment() {
     }
 
-    private class MyPhotoThread implements Runnable {
+    private class MyUpdateThread implements Runnable {
 
         @Override
         public void run() {
-            Log.e("Отслеживаю потоки", Thread.currentThread() + "(probably myPhotoThread) started");
-            profileImage = binding.profileImage;
-            edit_text_fio = binding.profileFIO;
+            Log.e("Отслеживаю потоки", Thread.currentThread() + "(probably myUpdateThread) started");
             edit_text_login = binding.profileLogin;
+            edit_text_password = binding.profilePassword;
 
-
-            profileImage.buildDrawingCache();
-            Bitmap photo = profileImage.getDrawingCache();
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            photo.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            byte[] byteArray = stream.toByteArray();
-
-            String register_url = "http://185.18.55.107:5000/setimage";
+            String register_url = "http://185.18.55.107:5000/updatedata";
             JSONObject register = new JSONObject();
             try {
-                register.put("fullname", edit_text_fio.getText().toString());
-                register.put("login", edit_text_login.getText().toString());
-                register.put("binphoto", byteArray);
+                register.put("id", getActivity().getIntent().getStringExtra("id"));
+                register.put("nlogin", edit_text_login.getText().toString());
+                register.put("npassword", edit_text_password.getText().toString());
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -92,10 +83,10 @@ public class ProfileFragment extends Fragment {
                 os.write(register.toString().getBytes(StandardCharsets.UTF_8));
                 os.close();
 
-//                InputStream in = new BufferedInputStream(conn.getInputStream());
-//                response = IOUtils.toString(in, "UTF-8");
-//                System.out.println(response);
-//                in.close();
+                InputStream in = new BufferedInputStream(conn.getInputStream());
+                response = IOUtils.toString(in, "UTF-8");
+                System.out.println(response);
+                in.close();
 
                 conn.disconnect();
             } catch (Exception e) {
@@ -141,6 +132,7 @@ public class ProfileFragment extends Fragment {
 
         edit_text_fio = binding.profileFIO;
         edit_text_login = binding.profileLogin;
+        edit_text_password = binding.profilePassword;
         ImageButton edit_btn = binding.profileEdit;
         ImageButton save_btn = binding.profileSave;
         ImageButton image_btn = binding.imageEdit;
@@ -148,6 +140,7 @@ public class ProfileFragment extends Fragment {
 
         edit_text_fio.setText(getActivity().getIntent().getStringExtra("fio"));
         edit_text_login.setText(getActivity().getIntent().getStringExtra("login"));
+        edit_text_password.setText(getActivity().getIntent().getStringExtra("password"));
 
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -163,7 +156,7 @@ public class ProfileFragment extends Fragment {
                 edit_btn.setVisibility(View.GONE);
                 save_btn.setVisibility(View.VISIBLE);
                 image_btn.setVisibility(View.VISIBLE);
-                edit_text_fio.setEnabled(true);
+                edit_text_password.setEnabled(true);
                 edit_text_login.setEnabled(true);
                 NavigationMainActivity.navView.setEnabled(false);
 
@@ -178,13 +171,13 @@ public class ProfileFragment extends Fragment {
                 save_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Thread myThread = new Thread(new MyPhotoThread());
+                        Thread myThread = new Thread(new MyUpdateThread());
                         myThread.start();
                         save_btn.setVisibility(View.INVISIBLE);
                         image_btn.setVisibility(View.INVISIBLE);
                         edit_btn.setVisibility(View.VISIBLE);
                         NavigationMainActivity.navView.setEnabled(true);
-                        edit_text_fio.setEnabled(false);
+                        edit_text_password.setEnabled(false);
                         edit_text_login.setEnabled(false);
                     }
                 });
