@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.trpp.NavigationActivity.NavigationMainActivity;
-import com.example.trpp.NavigationActivity.ui.profile.ProfileFragment;
 import com.example.trpp.R;
 import org.json.JSONObject;
 import java.io.InputStream;
