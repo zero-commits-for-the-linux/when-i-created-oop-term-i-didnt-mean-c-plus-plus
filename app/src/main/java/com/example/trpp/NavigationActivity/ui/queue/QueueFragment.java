@@ -136,26 +136,24 @@ public class QueueFragment extends Fragment {
         to_queue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                to_queue.setEnabled(flag);
-//                out_queue.setEnabled(!flag);
                 flag = true;
                 Thread myThread = new Thread(new MyToQueueThread());
                 myThread.start();
                 webView.loadUrl("185.18.55.107");
             }
         });
+        webView.loadUrl("185.18.55.107");
 
         out_queue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                out_queue.setEnabled(flag);
-//                to_queue.setEnabled(!flag);
                 flag = false;
                 Thread myThread = new Thread(new MyOutQueueThread());
                 myThread.start();
                 webView.loadUrl("185.18.55.107");
             }
         });
+        webView.loadUrl("185.18.55.107");
 
         webView = binding.webView;
 
