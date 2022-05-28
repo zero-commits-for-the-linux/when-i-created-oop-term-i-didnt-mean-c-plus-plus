@@ -133,6 +133,11 @@ public class QueueFragment extends Fragment {
         Button to_queue = binding.toQueue;
         Button out_queue = binding.outQueue;
 
+        webView = binding.webView;
+
+        webView.setWebViewClient(new QueueFragment.MyWebViewClient());
+        webView.getSettings().setJavaScriptEnabled(true);
+
         to_queue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -154,11 +159,6 @@ public class QueueFragment extends Fragment {
             }
         });
         webView.loadUrl("185.18.55.107");
-
-        webView = binding.webView;
-
-        webView.setWebViewClient(new QueueFragment.MyWebViewClient());
-        webView.getSettings().setJavaScriptEnabled(true);
 
         webView.setDownloadListener(new DownloadListener() {
             @Override
